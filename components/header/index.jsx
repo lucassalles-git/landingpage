@@ -8,7 +8,7 @@ const Header = () => {
         // Chamando os estilos
         <div className={Styles.container}>
             <div className={Styles.logotipo}>
-                <Image src={Logo} />
+                <Image src={Logo} alt="Logo"/>
             </div>
             <nav className={Styles.menu}>
                 <Link href="/">Home</Link>
