@@ -9,6 +9,7 @@
     grid-template-columns: repeat(3, auto);
     align-items: center;
     justify-content: space-between;
+    color: $white-color;
 }
 
 .menu {
@@ -16,6 +17,5 @@
         margin-left: 38.9px;
     }
     font-size: 22px;
-    color: $white-color;
 }
 
