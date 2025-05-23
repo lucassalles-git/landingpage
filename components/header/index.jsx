@@ -2,6 +2,7 @@ import Image from "next/image"; //importe da imagem
 import Link from "next/link"; //import dos links
 import Logo from "../../public/images/logo.svg"; //import da logo
 import Styles from "./header.module.scss" //import dos estilos
+import Button from "../button";
 
 const Header = () => {
     return (
@@ -16,7 +17,7 @@ const Header = () => {
                 <Link href="/">Cases</Link>
             </nav>
             <div className={Styles.action}>
-                <button className={Styles.button}>Fale conosco</button>
+                <Button title="Fale conosco"/>
             </div>
         </div>
     )
