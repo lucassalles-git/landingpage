@@ -1,3 +1,18 @@
+@import "../../styles/mixins/padding.scss";
+@import "../../styles/mixins/colors.scss";
+
+.container {
+    @include Padding;
+    padding-top: 226px;
+    height: 100vh;
+    background-image: url("../../public/images/fundoWelcome.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $purple2-color;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .text {
     h1 {
         font-weight: bold;
@@ -6,6 +21,10 @@
 
     p {
         font-size: 30px;
-        opacity: 0.8;
+        opacity: 0.7;
     }
+}
+
+.image {
+    text-align: end;
 }
