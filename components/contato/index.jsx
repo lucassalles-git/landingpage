@@ -2,6 +2,7 @@ import Button from "../button";
 import Input from "../input";
 import Select from "../select";
 import Styles from "./contato.module.scss";
+import Link from "next/link";
 
 const Contato = () => {
     return (
@@ -31,9 +32,13 @@ const Contato = () => {
                         { label: "Facebook", value: "facebook" }
                     ]} required />
 
-                    <Button title="Enviar" kind="full"/>
+                    <Button title="Enviar" kind="full" />
 
                 </form>
+
+            </div>
+            <div className={Styles.footer}>
+                <p>Ao enviar esse formulário, você reconhece que leu e concorda com a nossa <Link href="/"><span>Política de Privacidade</span>.</Link></p>
             </div>
         </section>
     );
