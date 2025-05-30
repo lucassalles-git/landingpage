@@ -1,5 +1,7 @@
 @import "../../styles/mixins/colors.scss";
 @import "../../styles/mixins/padding.scss";
+@import "../../styles/mixins/fonts.scss";
+@import "../../styles/mixins/responsive.scss";
 
 .container {
     @include Padding;
@@ -10,45 +12,94 @@
     align-items: center;
 
     h1 {
-        font-size: 61px;
+        @include SizeLarge;
         font-weight: bold;
     }
 
     p {
+        @include SizeNormal;
         margin-bottom: 8rem;
-        font-size: 30px;
         opacity: 0.7;
     }
 
-    h1, p {
+    h1,
+    p {
         width: 840px;
         text-align: center;
     }
+
+    @include Phone {
+        margin-bottom: 6rem;
+
+        p {
+            margin-bottom: 2rem;
+        }
+
+        h1,
+        p {
+            width: 100%;
+        }
+    }
+
+    @include Tablet {
+        margin-bottom: 6rem;
+
+        p {
+            margin-bottom: 3rem;
+        }
+
+        h1,
+        p {
+            width: 100%;
+        }
+    }
+
+    @include Laptop{
+        p{
+            margin-bottom: 6rem;
+        }
+        
+     }
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 68px;
+
+    @include Phone {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    @include Laptop {
+        margin-bottom: 8rem;
+    }
 }
 
 .feature {
-    width: 509px;
-    height: 347px;
+    max-width: 509px;
+    max-height: 347px;
+    width: 100%;
+    height: 100%;
     padding: 32px 36px;
     background-color: $white-color;
     border-radius: 5px;
 
     h2 {
+        @include SizeMedium;
         font-weight: bold;
-        font-size: 41px;
         color: $purple2-color;
     }
 
     p {
+        @include SizeSmall;
         width: auto;
-        font-size: 22px;
         color: $gray2-color;
         text-align: left;
+    }
+
+    @include Phone {
+        padding: 20px;
     }
 }

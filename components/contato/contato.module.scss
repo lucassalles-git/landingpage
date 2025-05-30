@@ -1,10 +1,12 @@
 @import "../../styles/mixins/colors.scss";
 @import "../../styles/mixins/padding.scss";
+@import "../../styles/mixins/responsive.scss";
+@import "../../styles/mixins/fonts.scss";
 
 .container {
     @include Padding;
     margin-bottom: 208px;
-    
+
     background-image: url("../../public/images/fundoWelcome.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,22 +16,32 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 25px 207px;
+
+    @include Phone {
+        grid-template-columns: 1fr;
+        margin-bottom: 6rem;
+    }
+
+     @include Tablet {
+        gap: 25px 50px;
+        margin-bottom: 6rem;
+    }
 }
 
 .texts {
     span {
-        font-size: 30px;
+        @include SizeNormal;
         font-weight: 600;
         color: $green2-color;
     }
 
     h2 {
-        font-size: 65px;
+        @include SizeLarge;
         font-weight: bold;
     }
 
     p {
-        font-size: 30px;
+        @include SizeNormal;
         font-weight: 300;
         opacity: 0.7;
     }
@@ -45,8 +57,8 @@
     gap: 30px;
 
     h3 {
+        @include SizeMedium;
         margin: 0;
-        font-size: 35px;
         font-weight: bold;
         color: $purple-color;
     }
@@ -54,6 +66,21 @@
     form {
         display: grid;
         gap: 23px;
+    }
+
+    @include Phone {
+        padding: 1rem;
+
+        form {
+            gap: 1rem;
+        }
+    }
+
+    @include Tablet {
+
+        form {
+            gap: 1rem;
+        }
     }
 
 }
@@ -70,5 +97,14 @@
     span {
         color: $white-color;
         cursor: pointer;
+    }
+
+    @include Phone {
+        grid-column-start: 1;
+        padding: 0 1rem;
+    }
+
+    @include Tablet {
+        padding: 0 1rem;
     }
 }
